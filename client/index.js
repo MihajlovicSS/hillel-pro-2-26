@@ -17,10 +17,15 @@ function onFormSubmit (e) {
 }
 
 socket.onmessage = (event) => {
+  try {
     const data = JSON.parse(event.data)
     const html = `<li><span>${data.name}</span>: <span>${data.message}</span></li>`
 
     messages.insertAdjacentHTML('beforeend', html)
+  } catch (e) {
+    console.info('Can not parse data')
+  }
+
 }
 
 socket.onopen = () => {
