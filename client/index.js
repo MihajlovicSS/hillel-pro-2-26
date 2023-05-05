@@ -1,7 +1,7 @@
 'use strict'
 
 const socket = new WebSocket('ws://localhost:8080')
-const form = document.querySelector('#formWs')
+const form = document.querySelector('#form')
 const messages = document.querySelector('#messages')
 
 form.addEventListener('submit', onFormSubmit)
